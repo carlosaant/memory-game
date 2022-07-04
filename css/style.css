@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+  font-size: 62.5%;
+  --shades-color-1: #ecd500;
+  --shades-color-2: #b8a700;
+  --shades-color-3: #877b00;
+  --shades-color-4: #5a5200;
+  --shades-color-5: #3a2b00;
+  --card-back: #1b3d2f;
+
+  --font-body: 'Righteous', cursive;
+}
+
+body {
+  background-color: var(--shades-color-1);
+  font-family: var(--font-body);
+}
+
+header {
+  padding-block: 2rem;
+}
+
+.wrapper {
+  width: min(50rem, 100%);
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-inline: 1rem;
+
+  /* background-color: aquamarine; */
+}
+
+/* ---- */
+
+header .logodiv {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header img {
+  width: 100%;
+}
+
+header .logodiv h1 {
+  font-size: 3rem;
+  color: var(--shades-color-3);
+}
+
+#game .board {
+  background-color: aquamarine;
+  width: 100%;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr;
+
+  justify-items: center;
+  align-items: center;
+
+  column-gap: 1rem;
+  row-gap: 1.5rem;
+}
+
+#game .card {
+  width: 8rem;
+  height: 8rem;
+  position: relative;
+
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+#game .card-front,
+.card-back {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+
+  border: 0.1rem solid var(--shades-color-4);
+  border-radius: 1.2rem;
+
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+
+  /* todas as cartas back ou front que estiverem invertidas (transforme rotate), ficarão ocultas */
+  backface-visibility: hidden;
+}
+
+#game .card-front {
+  background-color: var(--shades-color-2);
+  transform: rotateY(180deg);
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+/* #game .card-front::before {
+  content: '';
+  width: 12rem;
+  height: 12rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+
+  background-image: url('../assets/images/move-efect.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+} */
+
+#game .card-back {
+  background-color: var(--card-back);
+}
+
+#game img {
+  width: 100%;
+}
+
+/* --------------- */
+
+.game-over-div {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+
+  background-color: rgba(0, 0, 0, 0.9);
+
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+
+  animation-timing-function: ease-out;
+}
+
+#gameOverText {
+  background-color: var(--shades-color-4);
+  padding-block: 5rem;
+  padding-inline: 10rem;
+  border-radius: 5px;
+
+  font-size: 2rem;
+  font-family: var(--font-body);
+  line-height: 100%;
+  color: white;
+}
+
+#btnReinicia {
+  background-color: var(--shades-color-2);
+  font-size: 1.8rem;
+  font-family: var(--font-body);
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 2px;
+
+  padding-block: 1.5rem;
+  padding-inline: 4rem;
+
+  transition: transform 0.2s;
+}
+#btnReinicia:hover {
+  transform: scale(1.1);
+}
+
+.show {
+  display: flex;
+}
+
+@keyframes moveElem {
+  0% {
+    top: 100vh;
+    height: 0;
+  }
+  100% {
+    top: 0;
+    height: 100vh;
+  }
+}
