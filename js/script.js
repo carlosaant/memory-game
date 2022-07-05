@@ -61,5 +61,21 @@ function createCardFace(FACE, card, cardElement) {
 }
 
 function flipCardElement() {
-  this.classList.add('flip');
+  // console.log(this);
+  // passa o id da card que foi clicada na tela
+  if (game.setarCard(this.id)) {
+    this.classList.add('flip');
+
+    if (game.checkCardsMatch()) {
+      game.clearCardLockMode();
+    } else {
+      let viewFirstCard = document.getElementById(game.firstCard.id);
+      let viewSecondCard = document.getElementById(game.secondCard.id);
+      setTimeout(() => {
+        viewFirstCard.classList.remove('flip');
+        viewSecondCard.classList.remove('flip');
+        game.clearCardLockMode();
+      }, 1000);
+    }
+  }
 }

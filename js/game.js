@@ -62,5 +62,40 @@ let game = {
         this.cards[randomIndex]
       ];
     }
+  },
+
+  // ------------- checkagem e funcionamento do jogo
+  lockMode: false,
+  firstCard: null,
+  secondCard: null,
+
+  setarCard: function (id) {
+    let card = this.cards.filter(card => card.id === id)[0];
+
+    if (card.flipped || this.lockMode) {
+      return false;
+    }
+
+    // se a primeira card estiver como null, se estiver vazio entao entra no first
+    if (!this.firstCard) {
+      this.firstCard = card;
+      return true;
+    } else {
+      this.secondCard = card;
+
+      //como foi setada as 2 cards, entra em lockmode
+      this.lockMode = true;
+      return true;
+    }
+  },
+
+  checkCardsMatch: function () {
+    return this.firstCard.name === this.secondCard.name;
+  },
+
+  clearCardLockMode: function () {
+    this.firstCard = null;
+    this.secondCard = null;
+    this.lockMode = false;
   }
 };
