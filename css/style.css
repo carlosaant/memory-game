@@ -63,10 +63,38 @@ header .divcontrols {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+header .divcontrols .score {
+  width: 15rem;
+  height: 5rem;
+  background-color: var(--shades-color-2);
+  border-radius: 0.2rem;
+  border: 0.2rem solid var(--shades-color-1);
+}
+
+header #btn_iniciar {
+  background-color: var(--shades-color-1);
+  width: 15rem;
+  padding-block: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  font-family: var(--font-body);
+  color: var(--shades-color-5);
+
+  transition: all 0.2s;
+}
+header #btn_iniciar:hover {
+  transform: scale(1.1);
+}
+header #btn_iniciar:active {
+  background-color: var(--shades-color-3);
 }
 
 #game .board {
-  background-color: var(--card-back);
+  background: var(--card-back);
   width: 100%;
   padding-block: 4rem;
   padding-inline: 4rem;
