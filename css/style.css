@@ -57,10 +57,12 @@ header .header-logo{
   justify-content: space-between;
 }
 
-header .divplacar{
+header .divcontrols{
   width: 15rem;
   height: 10rem;
-  border: 0.1rem solid var(--shades-color-5);
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
