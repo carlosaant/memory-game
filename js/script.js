@@ -66,16 +66,21 @@ function flipCardElement() {
   if (game.setarCard(this.id)) {
     this.classList.add('flip');
 
-    if (game.checkCardsMatch()) {
-      game.clearCardLockMode();
-    } else {
-      let viewFirstCard = document.getElementById(game.firstCard.id);
-      let viewSecondCard = document.getElementById(game.secondCard.id);
-      setTimeout(() => {
-        viewFirstCard.classList.remove('flip');
-        viewSecondCard.classList.remove('flip');
+    if (game.secondCard != null) {
+      if (game.checkCardsMatch()) {
         game.clearCardLockMode();
-      }, 1000);
+      } else {
+        let viewFirstCard = document.getElementById(game.firstCard.id);
+        let viewSecondCard = document.getElementById(game.secondCard.id);
+        setTimeout(() => {
+          viewFirstCard.classList.remove('flip');
+          viewSecondCard.classList.remove('flip');
+
+          game.firstCard.flipped = false;
+          game.secondCard.flipped = false;
+          game.clearCardLockMode();
+        }, 1000);
+      }
     }
   }
 }

@@ -79,10 +79,11 @@ let game = {
     // se a primeira card estiver como null, se estiver vazio entao entra no first
     if (!this.firstCard) {
       this.firstCard = card;
+      this.firstCard.flipped = true;
       return true;
     } else {
       this.secondCard = card;
-
+      this.secondCard.flipped = true;
       //como foi setada as 2 cards, entra em lockmode
       this.lockMode = true;
       return true;
@@ -90,6 +91,9 @@ let game = {
   },
 
   checkCardsMatch: function () {
+    if (this.firstCard === null || this.secondCard === null) {
+      return false;
+    }
     return this.firstCard.name === this.secondCard.name;
   },
 
