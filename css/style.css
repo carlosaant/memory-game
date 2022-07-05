@@ -18,6 +18,7 @@ body {
 }
 
 header {
+  background-color: var(--shades-color-5);
   padding-block: 2rem;
 }
 
@@ -47,8 +48,21 @@ header img {
 
 header .logodiv h1 {
   font-size: 3rem;
-  color: var(--shades-color-3);
+  color: var(--shades-color-1);
 }
+
+header .header-logo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .divplacar{
+  width: 15rem;
+  height: 10rem;
+  border: 0.1rem solid var(--shades-color-5);
+}
+
 
 #game .board {
   background-color: aquamarine;
