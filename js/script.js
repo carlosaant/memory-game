@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function iniciarGame() {
   cards = createCardWithElements();
   embaralharCards(cards);
+  inicializarCardsElements(cards);
 }
 
 function inicializarCardsElements(cards) {
@@ -45,7 +46,7 @@ function inicializarCardsElements(cards) {
     cardElement.dataset.name = card.name;
 
     createCardContent(card, cardElement);
-    // cardElement.addEventListener('click', '');
+    cardElement.addEventListener('click', flipCardElement);
 
     board.appendChild(cardElement);
   });
@@ -120,4 +121,8 @@ function embaralharCards(cards) {
       cards[randomIndex]
     ];
   }
+}
+
+function flipCardElement() {
+  this.classList.add('flip');
 }
