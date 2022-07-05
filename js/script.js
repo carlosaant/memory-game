@@ -20,7 +20,19 @@ let wow_elements = [
 
 let cards = null;
 
+const btn_iniciar = document.getElementById('btn_iniciar');
+
 // -----------------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  btn_iniciar.addEventListener('click', iniciarGame);
+});
+
+function iniciarGame(){
+  cards = createCardWithElements();
+  embaralharCards(cards);
+}
+
 
 function createCardWithElements() {
   let cards = [];
