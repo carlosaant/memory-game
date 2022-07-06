@@ -86,6 +86,8 @@ function flipCardElement() {
     this.classList.add('flip');
 
     if (game.secondCard != null) {
+      game.score += 1;
+      score_most.textContent = game.score;
       if (game.checkCardsMatch()) {
         game.clearCardLockMode();
         if (game.checkGameOver()) {
@@ -105,9 +107,6 @@ function flipCardElement() {
           game.firstCard.flipped = false;
           game.secondCard.flipped = false;
           game.clearCardLockMode();
-
-          game.score += 1;
-          score_most.textContent = game.score;
         }, 1000);
       }
     }
