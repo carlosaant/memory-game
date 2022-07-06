@@ -22,6 +22,8 @@ function iniciarGame() {
 
 function inicializarCardsElements(cards) {
   let board = document.getElementById('gameBoard');
+
+  board.innerHTML = '';
   cards.forEach(card => {
     let cardElement = document.createElement('div');
     cardElement.id = card.id;
@@ -89,5 +91,14 @@ function flipCardElement() {
         }, 1000);
       }
     }
+  }
+}
+
+function restartGame() {
+  if (game.checkGameOver) {
+    game.clearCardLockMode();
+    iniciarGame();
+    const gameOverTela = document.getElementById('gameOverDiv');
+    gameOverTela.classList.remove('show');
   }
 }
