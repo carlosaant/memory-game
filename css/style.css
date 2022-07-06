@@ -144,7 +144,7 @@ header #btn_iniciar:active {
 }
 
 #game .card-front img {
-  transform: scale(1.5);
+  transform: scale(1.3);
 }
 
 .flip {

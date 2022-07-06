@@ -11,7 +11,7 @@ let game = {
     { name: 'rogue', path: './assets/images/rogue-icon-wow.png' },
     { name: 'priest', path: './assets/images/sacer-icon-wow.png' },
     { name: 'warlock', path: './assets/images/warlock-icon-wow.png' },
-    { name: 'burningcruzade', path: './assets/images/bc-icon-wow.png' }
+    { name: 'demonhunter', path: './assets/images/demonhunter-icon-wow.png' }
   ],
 
   cards: null,
