@@ -7,17 +7,34 @@ const ICON = 'icon';
 const BACK_CARD = './assets/images/warcraft-icon-back.png';
 
 const btn_iniciar = document.getElementById('btn_iniciar');
+const score_most = document.getElementById('scoreGame');
+
+let inicio_game = false;
 
 // -----------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', () => {
-  btn_iniciar.addEventListener('click', iniciarGame);
+  btn_iniciar.addEventListener('click', inicioGame);
+  score_most.textContent = game.score;
 });
+
+function inicioGame() {
+  if (inicio_game) {
+    restartGame();
+  } else {
+    inicio_game = true;
+    btn_iniciar.value = 'Reiniciar';
+    iniciarGame();
+  }
+}
 
 function iniciarGame() {
   game.createCardWithElements();
   // embaralharCards(cards);
   inicializarCardsElements(game.cards);
+
+  game.score = 0;
+  score_most.textContent = game.score;
 }
 
 function inicializarCardsElements(cards) {
@@ -71,6 +88,8 @@ function flipCardElement() {
     if (game.secondCard != null) {
       if (game.checkCardsMatch()) {
         game.clearCardLockMode();
+        game.score += 1;
+        score_most.textContent = game.score;
         if (game.checkGameOver()) {
           const gameOverTela = document.getElementById('gameOverDiv');
           setTimeout(() => {
@@ -100,5 +119,7 @@ function restartGame() {
     iniciarGame();
     const gameOverTela = document.getElementById('gameOverDiv');
     gameOverTela.classList.remove('show');
+  } else {
+    iniciarGame();
   }
 }

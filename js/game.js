@@ -15,6 +15,9 @@ let game = {
   ],
 
   cards: null,
+  score: 0,
+
+  // -------------------------------------
 
   createCardWithElements: function () {
     this.cards = [];
