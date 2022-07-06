@@ -202,10 +202,11 @@ header #btn_iniciar:active {
 #gameOverText {
   background-color: var(--shades-color-4);
   padding-block: 5rem;
-  padding-inline: 10rem;
+  padding-inline: 15rem;
   border-radius: 5px;
+  border: 0.1rem solid var(--shades-color-1);
 
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: var(--font-body);
   line-height: 100%;
   color: white;
