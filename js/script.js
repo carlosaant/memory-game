@@ -88,8 +88,6 @@ function flipCardElement() {
     if (game.secondCard != null) {
       if (game.checkCardsMatch()) {
         game.clearCardLockMode();
-        game.score += 1;
-        score_most.textContent = game.score;
         if (game.checkGameOver()) {
           const gameOverTela = document.getElementById('gameOverDiv');
           setTimeout(() => {
@@ -107,6 +105,9 @@ function flipCardElement() {
           game.firstCard.flipped = false;
           game.secondCard.flipped = false;
           game.clearCardLockMode();
+
+          game.score += 1;
+          score_most.textContent = game.score;
         }, 1000);
       }
     }
