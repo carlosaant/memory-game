@@ -224,6 +224,30 @@ header #btn_iniciar:active {
   display: flex;
 }
 
+footer {
+  background-color: var(--shades-color-5);
+  padding-block: 1.5rem;
+}
+
+footer .rightsdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer .rightsdiv p {
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 400;
+  text-align: justify;
+}
+
+footer .rightsdiv p:nth-child(2) {
+  padding-top: 1rem;
+  color: var(--shades-color-1);
+}
+
 @keyframes moveElem {
   0% {
     top: 100vh;
