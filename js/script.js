@@ -69,6 +69,13 @@ function flipCardElement() {
     if (game.secondCard != null) {
       if (game.checkCardsMatch()) {
         game.clearCardLockMode();
+        if (game.checkGameOver()) {
+          const gameOverTela = document.getElementById('gameOverDiv');
+          setTimeout(() => {
+            gameOverTela.classList.add('show');
+            gameOverTela.style.animationName = 'moveElem';
+          }, 500);
+        }
       } else {
         let viewFirstCard = document.getElementById(game.firstCard.id);
         let viewSecondCard = document.getElementById(game.secondCard.id);

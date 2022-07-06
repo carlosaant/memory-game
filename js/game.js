@@ -101,5 +101,10 @@ let game = {
     this.firstCard = null;
     this.secondCard = null;
     this.lockMode = false;
+  },
+
+  checkGameOver() {
+    // retorna true ou false, se todas as cartas estiverem flipped, no caso verifica se alguma carta não esta flipped
+    return this.cards.filter(card => !card.flipped).length == 0;
   }
 };
