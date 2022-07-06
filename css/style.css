@@ -94,7 +94,7 @@ header #btn_iniciar:active {
 }
 
 #game .board {
-  background: var(--card-back);
+  /* background: var(--card-back); */
   width: 100%;
   padding-block: 4rem;
   padding-inline: 4rem;
