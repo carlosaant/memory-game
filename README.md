@@ -21,3 +21,16 @@ Ao selecionar uma card ativando a função `flipCardElement`, a mesma é virada 
 Quando as cards são correspondetes, verificadas atraves do método `checkCardsMatch` que verifica `firstCard.name` e `secondCard.name` ambas são mantidas, e caso contrario é resetado o `lockMode` por `clearCardLockMode` e seus status `flipped` retornados a `false`.
 
 A cada interação entre 2 elementos selecionados, o contador de movimentos é incrementado.
+
+#### Tecnologias e Técnicas
+
+- Html
+- Css
+- Js
+- Desenvolvimento seguindo o modelo Mobile First
+
+#### Acessando
+
+Para usar o Memory Game, siga estas etapas:
+
+Você pode acessar o projeto online neste link: [Memory Game - World Of Warcraft](https://carlosaant.github.io/memory-game/) ou baixar o projeto para sua máquina local e abrir o index.html no seu navegador de preferência.
