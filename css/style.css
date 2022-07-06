@@ -113,6 +113,10 @@ header #btn_iniciar:active {
   background-color: var(--shades-color-3);
 }
 
+#game {
+  min-height: 100vh;
+}
+
 #game .board {
   /* background: var(--card-back); */
   width: 100%;
