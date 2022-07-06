@@ -41,7 +41,7 @@ header .logodiv {
   justify-content: center;
   align-items: center;
 
-  background: black;
+  background: var(--card-back);
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   padding-block: 1rem;
 }
@@ -278,6 +278,17 @@ footer .rightsdiv p:nth-child(2) {
     row-gap: 1.5rem;
 
     margin-top: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  header .header-logo {
+    flex-direction: row;
+  }
+
+  header .logodiv {
+    width: 50%;
+    flex-direction: column;
   }
 }
 
