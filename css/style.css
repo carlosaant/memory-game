@@ -65,7 +65,7 @@ header .header-logo {
 
 header .divcontrols {
   width: 15rem;
-  height: 10rem;
+  height: 13rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,10 +74,24 @@ header .divcontrols {
 }
 header .divcontrols .score {
   width: 15rem;
-  height: 5rem;
+  height: 7rem;
   background-color: var(--shades-color-2);
   border-radius: 0.2rem;
   border: 0.2rem solid var(--shades-color-1);
+}
+header .divcontrols .score span {
+  font-size: 1.4rem;
+  font-family: var(--font-body);
+  color: var(--shades-color-5);
+  padding-inline: 0.2rem;
+}
+
+header .divcontrols .score .score-most {
+  display: flex;
+  font-size: 4rem;
+
+  justify-content: center;
+  align-items: center;
 }
 
 header #btn_iniciar {
